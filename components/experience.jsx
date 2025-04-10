@@ -6,30 +6,103 @@ import { Briefcase, Calendar, MapPin } from "lucide-react"
 export default function Experience() {
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Innovations Inc.",
-      location: "San Francisco, CA",
-      period: "2021 - Present",
-      description:
-        "Led the frontend development team in building a cutting-edge SaaS platform. Implemented modern React architecture with Next.js, optimized performance, and improved user experience. Reduced load times by 40% and increased user engagement by 25%.",
-    },
+      title: "Full Stack Developer",
+      company: "Animmza",
+      location: "Remote",
+      period: "Nov 2024 – Apr 2025",
+      description: (
+        <>
+          Worked as a Full Stack Developer, contributing to production-level features using <strong>React</strong>,{" "}
+          <strong>Next.js</strong>, and <strong>Node.js</strong>. Developed and maintained key projects including the{" "}
+          <a href="https://solutions-nextjs-app.vercel.app/" className="neon-cyan" target="_blank" rel="noopener noreferrer">
+            Solutions App
+          </a>{" "}
+          (appointment & post management),{" "}
+          <a href="https://flooring-admin-panel.vercel.app/" className="neon-cyan" target="_blank" rel="noopener noreferrer">
+            Flooring Admin Panel
+          </a>
+          , and{" "}
+          <a href="https://convertify-by-afaq.vercel.app/" className="neon-cyan" target="_blank" rel="noopener noreferrer">
+            Convertify
+          </a>{" "}
+          (a digital universal converter). Optimized backend APIs and collaborated with the UI/UX team to deliver seamless user experiences.
+        </>
+      ),
+    }
+    ,
     {
-      title: "Frontend Developer",
-      company: "Digital Solutions LLC",
-      location: "New York, NY",
-      period: "2019 - 2021",
-      description:
-        "Developed responsive web applications using React, Redux, and Tailwind CSS. Collaborated with UX/UI designers to implement pixel-perfect interfaces. Integrated RESTful APIs and optimized application performance.",
+      title: "Junior Web Developer",
+      company: "Connextar Technologies",
+      location: "Bradford, United Kingdom",
+      period: "Mar 2023 – Present",
+      description: (
+        <>
+          Built the company’s official website (
+          <a href="https://connextar.com" className="neon-cyan" target="_blank" rel="noopener noreferrer">
+            Connextar
+          </a>
+          ) using Next.js 14, Tailwind CSS, and TypeScript. Worked on key projects including the{" "}
+          <a href="https://mas.umairshah.dev/" className="neon-cyan" target="_blank" rel="noopener noreferrer">
+            Masjid App Suite
+          </a>
+          ,{" "}
+          <a href="https://pokerply.vercel.app/" className="neon-cyan" target="_blank" rel="noopener noreferrer">
+            Pokerply Telegram App
+          </a>
+          ,{" "}
+          <a href="https://pdfcentre.io/" className="neon-cyan" target="_blank" rel="noopener noreferrer">
+            PDFCenter.io
+          </a>
+          , and{" "}
+          <a href="https://pak-draw-by-afaq.vercel.app/" className="neon-cyan" target="_blank" rel="noopener noreferrer">
+            Pak Draw (experimental)
+          </a>
+          . Also developed an automatic invoice generator, contributed to a Chrome extension for time tracking, and supported backend development on various commercial apps.
+        </>
+      ),
     },
+
     {
-      title: "Web Developer",
-      company: "Creative Agency",
-      location: "Austin, TX",
-      period: "2017 - 2019",
-      description:
-        "Built custom WordPress and Shopify themes for various clients. Created interactive UI components using JavaScript and CSS. Maintained and updated existing client websites and e-commerce platforms.",
-    },
-  ]
+      title: "Web Development Intern",
+      company: "Connextar Technologies",
+      location: "Bradford, United Kingdom",
+      period: "Mar 2022 – Apr 2023",
+      description: (
+        <>
+          Completed a year-long internship focused on the <strong>MERN stack</strong>, gaining hands-on experience through real tasks and mentorship. Built an{" "}
+          <a
+            href="https://invoice-generator-reactjs.vercel.app/"
+            className="neon-cyan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Invoice Generator App
+          </a>{" "}
+          and contributed to UI features like dropdown menus and translation work for the{" "}
+          <a
+            href="https://www.canvas-events.co.uk/"
+            className="neon-cyan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Canvas Events website
+          </a>
+          . Successfully completed the{" "}
+          <a
+            href="https://www.udemy.com/course/the-complete-web-development-bootcamp/"
+            className="neon-cyan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Complete Web Development Bootcamp
+          </a>{" "}
+          on Udemy and contributed to internal tools and utilities.
+        </>
+      ),
+    }
+    
+  ];
+
 
   const container = {
     hidden: { opacity: 0 },

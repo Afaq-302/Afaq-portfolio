@@ -5,6 +5,11 @@ import { Code2, Palette, Globe, Database, ShoppingCart, Smartphone, Figma, Githu
 
 export default function About() {
   const skills = [
+    {
+      name: "JavaScript",
+      icon: <Code2 className="h-5 w-5" />,
+      color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/50",
+    },
     { name: "React", icon: <Code2 className="h-5 w-5" />, color: "bg-cyan-500/20 text-cyan-400 border-cyan-500/50" },
     { name: "Next.js", icon: <Layers className="h-5 w-5" />, color: "bg-gray-500/20 text-gray-300 border-gray-500/50" },
     {
@@ -12,21 +17,8 @@ export default function About() {
       icon: <Palette className="h-5 w-5" />,
       color: "bg-blue-500/20 text-blue-400 border-blue-500/50",
     },
-    {
-      name: "JavaScript",
-      icon: <Code2 className="h-5 w-5" />,
-      color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/50",
-    },
-    {
-      name: "WordPress",
-      icon: <Globe className="h-5 w-5" />,
-      color: "bg-blue-500/20 text-blue-400 border-blue-500/50",
-    },
-    {
-      name: "Shopify",
-      icon: <ShoppingCart className="h-5 w-5" />,
-      color: "bg-green-500/20 text-green-400 border-green-500/50",
-    },
+
+    
     {
       name: "UI/UX Design",
       icon: <Figma className="h-5 w-5" />,
@@ -43,9 +35,19 @@ export default function About() {
       color: "bg-gray-500/20 text-gray-300 border-gray-500/50",
     },
     {
-      name: "SQL/NoSQL",
+      name: "MongoDB",
       icon: <Database className="h-5 w-5" />,
       color: "bg-orange-500/20 text-orange-400 border-orange-500/50",
+    },
+    {
+      name: "WordPress",
+      icon: <Globe className="h-5 w-5" />,
+      color: "bg-blue-500/20 text-blue-400 border-blue-500/50",
+    },
+    {
+      name: "Shopify",
+      icon: <ShoppingCart className="h-5 w-5" />,
+      color: "bg-green-500/20 text-green-400 border-green-500/50",
     },
   ]
 
@@ -92,22 +94,26 @@ export default function About() {
             transition={{ duration: 0.7 }}
           >
             <div className="glass-effect p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-6 neon-cyan">Who I Am</h3>
+              <h3 className="text-2xl font-bold mb-6 neon-cyan">About Me</h3>
+
               <p className="text-gray-300 mb-6">
-                I'm a passionate full-stack developer with a keen eye for design and a love for creating seamless user
-                experiences. With over 5 years of experience in web development, I specialize in building modern,
-                responsive, and high-performance web applications.
+                I'm a Full Stack Developer with <strong>4+ years of experience</strong> in building clean, responsive web apps.
+                After a year of dedicated self-learning, I joined <strong>Connextar</strong> as an intern and later advanced to a
+                <strong> Junior Web Developer</strong>.
               </p>
+
               <p className="text-gray-300 mb-6">
-                My journey in tech began with a curiosity about how websites work, which led me to dive deep into the
-                world of programming. Since then, I've worked on a variety of projects, from e-commerce platforms to
-                complex web applications, always striving for excellence and innovation.
+                I’ve worked on several real-world projects and enjoy solving problems across both frontend and backend using tools like
+                <strong> React, Next.js, Node.js,</strong> and <strong>Tailwind CSS</strong>. Some of my favorite projects are highlighted below.
               </p>
+
+
               <p className="text-gray-300">
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                or sharing my knowledge through blog posts and community events.
+                I'm always learning — exploring new tools, contributing to open-source, and refining my skills to stay ahead in tech.
               </p>
             </div>
+
+
           </motion.div>
 
           {/* Right column - Skills */}
