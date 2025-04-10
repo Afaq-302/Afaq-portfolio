@@ -158,7 +158,7 @@
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,255,255,0.3)];
+    @apply transition-all duration-200 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,255,255,0.3)];
   }
 }
 

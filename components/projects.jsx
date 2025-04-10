@@ -12,53 +12,78 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Connextar Website",
       description:
-        "A full-featured e-commerce platform built with Next.js, featuring product listings, cart functionality, and secure checkout.",
+        "Official website for Connextar, built using modern tech stack including Next.js 14 and Tailwind CSS.",
       image: "/placeholder.svg?height=600&width=800",
-      tags: ["Next.js", "React", "Tailwind CSS", "Stripe"],
-      liveUrl: "#",
+      tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+      liveUrl: "https://connextar.com",
       githubUrl: "#",
       longDescription:
-        "This e-commerce platform provides a seamless shopping experience with features like product search, filtering, user accounts, wishlists, and secure payment processing through Stripe. The admin dashboard allows for easy product and order management.",
+        "Connextar is a professional business website showcasing services and contact forms. Developed with scalability and performance in mind using Next.js 14, Tailwind CSS, and TypeScript.",
     },
     {
       id: 2,
-      title: "Portfolio Website",
+      title: "Masjid App Suite",
       description:
-        "A modern portfolio website for a photographer, featuring a gallery with filtering and lightbox functionality.",
+        "A suite of applications designed to support masjid operations and community engagement.",
       image: "/placeholder.svg?height=600&width=800",
-      tags: ["React", "Framer Motion", "CSS Grid", "Cloudinary"],
-      liveUrl: "#",
+      tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+      liveUrl: "https://mas.umairshah.dev/",
       githubUrl: "#",
       longDescription:
-        "This portfolio website showcases a photographer's work with a responsive image gallery, category filtering, and a lightbox for detailed viewing. It includes contact forms, about sections, and testimonials, all with smooth animations and transitions.",
+        "Includes features like prayer times management, announcements, events, and donations. Built with a focus on utility and clean UI for masjid admins and attendees.",
     },
     {
       id: 3,
-      title: "Task Management App",
+      title: "Solutions App",
       description:
-        "A collaborative task management application with real-time updates, user assignments, and progress tracking.",
+        "A platform for managing appointments and posts effectively.",
       image: "/placeholder.svg?height=600&width=800",
-      tags: ["React", "Firebase", "Tailwind CSS", "Redux"],
-      liveUrl: "#",
+      tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+      liveUrl: "https://solutions-nextjs-app.vercel.app/",
       githubUrl: "#",
       longDescription:
-        "This task management app helps teams collaborate efficiently with features like task creation, assignment, due dates, comments, file attachments, and real-time updates. It includes dashboards for tracking progress and productivity analytics.",
+        "Solutions App allows for streamlined scheduling and post publishing with a clean admin interface. Built to cater to service providers and content managers.",
     },
     {
       id: 4,
-      title: "Fitness Tracking Dashboard",
+      title: "PDFCenter.io",
       description:
-        "A comprehensive fitness tracking dashboard that visualizes workout data, nutrition, and progress over time.",
+        "An online PDF utility tool for converting, compressing, and managing PDFs.",
       image: "/placeholder.svg?height=600&width=800",
-      tags: ["Next.js", "Chart.js", "Tailwind CSS", "API Integration"],
-      liveUrl: "#",
+      tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+      liveUrl: "https://pdfcentre.io/",
       githubUrl: "#",
       longDescription:
-        "This fitness dashboard helps users track their workouts, nutrition, and progress with interactive charts and visualizations. It integrates with fitness devices and apps to automatically import data and provide personalized insights and recommendations.",
+        "PDFCenter.io helps users convert documents to and from PDF, compress files, and manage pages with ease. Optimized for speed and simplicity.",
     },
-  ]
+    {
+      id: 5,
+      title: "Pak Draw (Experimental)",
+      description:
+        "A creative experimental web app focused on drawing and visuals.",
+      image: "/placeholder.svg?height=600&width=800",
+      tags: ["Canvas API", "JavaScript", "Next.js"],
+      liveUrl: "https://pak-draw-by-afaq.vercel.app/",
+      githubUrl: "#",
+      longDescription:
+        "An experimental drawing application using the Canvas API. Designed to test interactivity and real-time performance in a web-based creative tool.",
+    },
+    {
+      id: 6,
+      title: "Pokerply Telegram App",
+      description:
+        "A Telegram app for managing and interacting with poker games.",
+      image: "/placeholder.svg?height=600&width=800",
+      tags: ["Telegram API", "Next.js", "Tailwind CSS"],
+      liveUrl: "https://pokerply.vercel.app/",
+      githubUrl: "#",
+      longDescription:
+        "Pokerply is a Telegram-integrated app that supports poker game management. It includes features like session tracking, scoreboards, and interactive commands.",
+    },
+  ];
+
 
   const container = {
     hidden: { opacity: 0 },
@@ -94,15 +119,9 @@ export default function Projects() {
           My Projects
         </motion.h2>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <motion.div key={project.id} variants={item} className="glass-effect rounded-xl overflow-hidden card-hover">
+            <div key={project.id} className="glass-effect rounded-xl overflow-hidden card-hover">
               <div className="relative group">
                 <div className="overflow-hidden">
                   <img
@@ -111,41 +130,17 @@ export default function Projects() {
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <div className="p-6 w-full">
-                    <div className="flex justify-between items-center">
-                      <div className="flex space-x-3">
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-white hover:text-cyan-400 transition-colors"
-                        >
-                          <ExternalLink className="h-5 w-5" />
-                        </a>
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-white hover:text-cyan-400 transition-colors"
-                        >
-                          <Github className="h-5 w-5" />
-                        </a>
-                      </div>
-                      <button
-                        onClick={() => setSelectedProject(project)}
-                        className="text-white hover:text-cyan-400 transition-colors"
-                      >
-                        <Maximize2 className="h-5 w-5" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 neon-cyan">{project.title}</h3>
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl font-bold mb-2 neon-cyan hover:underline block"
+                >
+                  {project.title}
+                </a>
                 <p className="text-gray-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, index) => (
@@ -158,9 +153,10 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
+
       </div>
 
       {/* Project Details Dialog */}

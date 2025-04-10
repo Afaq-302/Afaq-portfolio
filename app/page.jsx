@@ -1,6 +1,7 @@
 import Hero from "@/components/hero"
 import About from "@/components/about"
 import ScrollingText from "@/components/scrolling-text"
+import Reviews from "@/components/reviews"
 import Experience from "@/components/experience"
 import Projects from "@/components/projects"
 import Contact from "@/components/contact"
@@ -17,6 +18,7 @@ export default function Home() {
       <ScrollingText />
       <Experience />
       <Projects />
+      <Reviews />
       <FuturisticSection />
       <Contact />
       <Footer />

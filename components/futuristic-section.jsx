@@ -113,31 +113,33 @@ export default function FuturisticSection() {
   const features = [
     {
       icon: <Cpu className="h-8 w-8" />,
-      title: "AI-Powered Insights",
+      title: "Modern Tech Stack",
       description:
-        "Leverage machine learning algorithms to gain valuable insights into your audience and optimize your digital presence.",
+        "Building robust web apps using React, Next.js, and modern frameworks for fast, scalable solutions.",
     },
     {
       icon: <Zap className="h-8 w-8" />,
-      title: "Lightning Performance",
+      title: "Optimized Performance",
       description:
-        "Experience blazing-fast load times and smooth interactions with optimized code and cutting-edge technologies.",
+        "Writing clean, efficient code that ensures fast load times and a smooth user experience across all devices.",
     },
     {
       icon: <Lightbulb className="h-8 w-8" />,
-      title: "Innovative Solutions",
+      title: "Custom Web Solutions",
       description:
-        "Custom-tailored solutions that push the boundaries of what's possible in web development and design.",
+        "Crafting tailored websites and apps that align perfectly with client goals and business needs.",
     },
     {
       icon: <Sparkles className="h-8 w-8" />,
-      title: "Immersive Experiences",
-      description: "Create memorable digital experiences that captivate users and leave a lasting impression.",
+      title: "Engaging UI/UX",
+      description:
+        "Designing intuitive, interactive interfaces that deliver a seamless and enjoyable user experience.",
     },
-  ]
+  ];
+
 
   return (
-    <section ref={containerRef} className="min-h-screen relative py-24 overflow-hidden">
+    <section ref={containerRef} className="relative overflow-hidden">
       {/* Particle background */}
       <canvas
         ref={canvasRef}
@@ -154,12 +156,12 @@ export default function FuturisticSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Future-Ready Solutions
+            Crafting Modern Web Experiences
           </motion.h2>
 
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-xl text-gray-300">
-              Pushing the boundaries of what's possible with cutting-edge technologies and innovative approaches.
+              Building fast, responsive, and dynamic websites using the latest tools and frameworks — tailored to deliver real-world impact.
             </p>
           </div>
 
