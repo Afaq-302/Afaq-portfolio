@@ -5,6 +5,9 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, Code, Zap, Star } from "lucide-react"
 
+import Afaq from "../public/afaq.png"
+import Image from "next/image"
+
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
@@ -93,68 +96,87 @@ export default function Hero() {
       </motion.div>
 
       {/* Main content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl">
-        <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="block">Hi, I'm </span>
-            <span className="neon-cyan">AFAQ AHMAD</span>
-          </h1>
-        </motion.div>
+      <div className="relative z-10 px-4 max-w-7xl mx-auto  pt-10 md:pt-20">
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-start gap-8">
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          <h2 className="text-2xl md:text-4xl font-light mb-8 text-gray-300">
-            <span className="neon-purple">Full Stack Developer</span> crafting digital experiences
-          </h2>
-        </motion.div>
+          {/* Text Content */}
+          <div className="text-center md:text-left md:flex-1">
+            <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="block">Hi, I'm </span>
+                <span className="neon-cyan">AFAQ AHMAD</span>
+              </h1>
+            </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="glass-effect inline-block p-6 rounded-xl mb-12 max-w-2xl"
-        >
-          <p className="text-lg text-gray-300">
-            I build exceptional and accessible digital experiences for the web, focusing on both aesthetics and
-            functionality.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.8 }}
-          className="flex flex-col sm:flex-row justify-center gap-4"
-        >
-          <a href="#projects">
-            <Button
-              size="lg"
-              className="px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 border-none shadow-md"
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
             >
-              View My Work
-            </Button>
-          </a>
+              <h2 className="text-2xl md:text-4xl font-light mb-4 md:mb-8 text-gray-300">
+                <span className="neon-purple">Full Stack Developer</span> crafting digital experiences
+              </h2>
+            </motion.div>
 
-          <a href="#contact">
-            <Button
-              size="lg"
-              variant="outline"
-              className="px-6 py-3 rounded-lg font-semibold border border-cyan-500 text-cyan-400 hover:bg-cyan-950/30 shadow-md"
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="glass-effect inline-block p-4 sm:p-6 rounded-xl mb-4 md:mb-8 lg:mb-12 max-w-md sm:max-w-2xl"
             >
-              Contact Me
-            </Button>
-          </a>
+              <p className="text-base sm:text-lg text-gray-300">
+                I build exceptional and accessible digital experiences for the web, focusing on both aesthetics and functionality.
+              </p>
+            </motion.div>
 
 
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.8 }}
+              className="flex flex-row justify-center md:justify-start flex-wrap gap-4"
+            >
+              <a href="#projects">
+                <Button
+                  size="lg"
+                  className="px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 border-none shadow-md"
+                >
+                  View My Work
+                </Button>
+              </a>
+
+              <a href="#contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="px-6 py-3 rounded-lg font-semibold border border-cyan-500 text-cyan-400 hover:bg-cyan-950/30 shadow-md"
+                >
+                  Contact Me
+                </Button>
+              </a>
+            </motion.div>
+
+          </div>
+
+          {/* Image */}
+          <div className="md:flex-1 flex justify-center">
+            <div className="relative rounded-full p-1 bg-cyan-500/20 shadow-[0_0_25px_#22d3ee]">
+              <Image
+                src={Afaq}
+                alt="Afaq Ahmad"
+                className="w-40 sm:w-60 md:w-72 lg:w-80 rounded-full object-cover border-4 border-cyan-400 shadow-[0_0_20px_#22d3ee]"
+              />
+            </div>
+          </div>
+
+        </div>
       </div>
+
+
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white"
+        className="hidden md:block absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
