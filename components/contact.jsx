@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Send, Mail, Phone, MapPin, Linkedin, Github, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -15,33 +15,49 @@ export default function Contact() {
     email: "",
     subject: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      })
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      })
-      setIsSubmitting(false)
-    }, 1500)
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("https://formspree.io/f/xyzwgweo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        console.log("✅ Message sent successfully via Formspree!");
+        setFormSubmitted(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => {
+          setFormSubmitted(false);
+        }, 3000);
+      } else {
+        console.log("❌ Failed to send via Formspree:", data?.errors || "Unknown error");
+      }
+    } catch (err) {
+      console.log("❌ Something went wrong while sending email via Formspree:", err);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
 
   return (
     <section id="contact" className="section-container relative">
@@ -78,8 +94,8 @@ export default function Contact() {
                   <Mail className="h-6 w-6 text-cyan-400 mt-1 mr-4" />
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
-                    <a href="mailto:hello@example.com" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      hello@example.com
+                    <a href="mailto:ufaq3022@gmail.com" className="text-gray-300 hover:text-cyan-400 transition-colors">
+                      ufaq3022@gmail.com
                     </a>
                   </div>
                 </div>
@@ -88,8 +104,8 @@ export default function Contact() {
                   <Phone className="h-6 w-6 text-cyan-400 mt-1 mr-4" />
                   <div>
                     <h4 className="font-semibold mb-1">Phone</h4>
-                    <a href="tel:+11234567890" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                      +1 (123) 456-7890
+                    <a href="tel:+923129113445" className="text-gray-300 hover:text-cyan-400 transition-colors">
+                      +92 312 9113445
                     </a>
                   </div>
                 </div>
@@ -98,38 +114,32 @@ export default function Contact() {
                   <MapPin className="h-6 w-6 text-cyan-400 mt-1 mr-4" />
                   <div>
                     <h4 className="font-semibold mb-1">Location</h4>
-                    <p className="text-gray-300">San Francisco, CA</p>
+                    <p className="text-gray-300">Mardan, KPK, Pakistan</p>
                   </div>
                 </div>
               </div>
 
+
               <div className="mt-12">
                 <h4 className="font-semibold mb-4">Connect with me</h4>
-                <div className="flex space-x-6">
+                <div className="flex space-x-8">
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/afaqy/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-cyan-400 transition-colors"
+                    className="text-gray-300 scale-125 hover:text-cyan-400 transition-colors"
                   >
                     <Linkedin className="h-6 w-6" />
                   </a>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/Afaq-302/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-cyan-400 transition-colors"
+                    className="text-gray-300 scale-125 hover:text-cyan-400 transition-colors"
                   >
                     <Github className="h-6 w-6" />
                   </a>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-cyan-400 transition-colors"
-                  >
-                    <Twitter className="h-6 w-6" />
-                  </a>
+
                 </div>
               </div>
             </div>
@@ -143,7 +153,10 @@ export default function Contact() {
             transition={{ duration: 0.7 }}
           >
             <div className="glass-effect p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-8 neon-purple">Send a Message</h3>
+              <h3 className="text-2xl font-bold mb-8 neon-purple">
+                {formSubmitted ? "Form Submitted ✅" : "Send a Message"}
+              </h3>
+
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

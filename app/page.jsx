@@ -11,7 +11,7 @@ import Navbar from "@/components/navbar"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white overflow-hidden">
+    <main className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white overflow-visible">
       <Navbar />
       <Hero />
       <About />
